@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerUIController : MonoBehaviour
 {
-    public PlayerHealthController playerHealthController;
     public Image healthBar;
     public RectTransform healthBarRectTransform;
 
     public void UpdateImageFill()
     {
-        healthBar.DOFillAmount(playerHealthController.health / 100f, 0.5f);
+        healthBar.DOFillAmount(PlayerManager.Instance.playerHealthController.health / 100f, 0.5f);
         ShakeHealthBar();
     }
 

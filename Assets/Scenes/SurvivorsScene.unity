@@ -6790,8 +6790,8 @@ GameObject:
   - component: {fileID: 1513436468}
   - component: {fileID: 1513436464}
   - component: {fileID: 1513436470}
-  - component: {fileID: 1513436471}
-  - component: {fileID: 1513436472}
+  - component: {fileID: 1513436477}
+  - component: {fileID: 1513436476}
   - component: {fileID: 1513436473}
   - component: {fileID: 1513436475}
   m_Layer: 3
@@ -6972,33 +6972,6 @@ MonoBehaviour:
   DashCooldown: 0.75
   controlScheme: 0
   DashParticles: {fileID: 0}
---- !u!114 &1513436471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513436454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2855e3590f2c55b49a5c14b909cb925d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  canTakeDamage: 1
---- !u!114 &1513436472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513436454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e7286b5306c7a94fb147560738c7ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthController: {fileID: 1513436471}
 --- !u!114 &1513436473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7011,7 +6984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10576afc571715e4c8c3130a138f60df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthController: {fileID: 1513436471}
   healthBar: {fileID: 450859017}
   healthBarRectTransform: {fileID: 450859016}
 --- !u!114 &1513436474
@@ -7026,9 +6998,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29785e702e654b84a892b88833b8bc01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealthController: {fileID: 1513436471}
+  playerHealthController: {fileID: 1513436476}
   playerUIController: {fileID: 1513436473}
-  playerTriggerController: {fileID: 1513436472}
+  playerTriggerController: {fileID: 1513436477}
   playerController: {fileID: 1513436470}
 --- !u!114 &1513436475
 MonoBehaviour:
@@ -7045,6 +7017,32 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   muzzle: {fileID: 0}
   projectileSpeed: 10
+--- !u!114 &1513436476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513436454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44554b40a1b91bb4dbb366534e700af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  canTakeDamage: 1
+--- !u!114 &1513436477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513436454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560767b39a5ace64b9c9bc95bfc8515c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547012359
 GameObject:
   m_ObjectHideFlags: 0

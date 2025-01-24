@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerTriggerController : MonoBehaviour
 {
-    [Header("Manager References")]
-    [SerializeField] private PlayerHealthController playerHealthController;
     
     [Header("Tags")]
     private const string zombieDamageTag = "Zombie";
@@ -13,7 +11,7 @@ public class PlayerTriggerController : MonoBehaviour
     {
         if (other.CompareTag(zombieDamageTag))
         {
-            playerHealthController.TakeDamage(10);
+            PlayerManager.Instance.playerHealthController.TakeDamage(10);
         }
     }
 
@@ -30,7 +28,7 @@ public class PlayerTriggerController : MonoBehaviour
     {
         if (other.CompareTag(zombieDamageTag))
         {
-            playerHealthController.canTakeDamage = true;
+            PlayerManager.Instance.playerHealthController.canTakeDamage = true;
         }
     }
 }

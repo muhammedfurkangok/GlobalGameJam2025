@@ -13,7 +13,7 @@ public class PlayerHealthController : MonoBehaviour
 
         canTakeDamage = false;
         health -= damage;
-        PlayerUIController.Instance.UpdateImageFill();
+        PlayerManager.Instance.playerUIController.UpdateImageFill();
         //damage anim
         if (health <= 0)
         {

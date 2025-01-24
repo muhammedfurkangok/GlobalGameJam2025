@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PlayerController : MonoBehaviour, IPlayerController
@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     #region Stats
 
     [Header("LAYERS")] [Tooltip("Set this to the layer your player is on")]
-    public LayerMask PlayerLayer;
+    public LayerMask GroundLayer;
 
     [Header("INPUT")]
     [Tooltip(
@@ -83,13 +83,9 @@ public class PlayerController : MonoBehaviour, IPlayerController
     {
         WASD,
         Arrows,
-        Joystick1,
-        Joystick2,
-        JoystickAlt1,
-        JoystickAlt2
+        Joystick
     }
 
-    public bool isPlayer1 = true;
     public PlayerControlScheme controlScheme = PlayerControlScheme.WASD;
     [SerializeField] private ParticleSystem DashParticles;
 
@@ -121,16 +117,6 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _col = GetComponent<CapsuleCollider2D>();
 
         _cachedQueryStartInColliders = Physics2D.queriesStartInColliders;
-    }
-
-    private void OnChangeInputForPlayer1(PlayerControlScheme obj)
-    {
-        if (isPlayer1) controlScheme = obj;
-    }
-
-    private void OnChangeInputForPlayer2(PlayerControlScheme obj)
-    {
-        if (!isPlayer1) controlScheme = obj;
     }
 
     private void Update()
@@ -171,69 +157,18 @@ public class PlayerController : MonoBehaviour, IPlayerController
                 Move = new Vector2(Input.GetAxisRaw("HorizontalArrow"), Input.GetAxisRaw("VerticalArrow"))
             };
         }
-
-        else if (controlScheme == PlayerControlScheme.Joystick1)
+        else if (controlScheme == PlayerControlScheme.Joystick)
         {
             _frameInput = new FrameInput
             {
-                JumpDown = Input.GetKeyDown(KeyCode.Joystick1Button3),
-                JumpHeld = Input.GetKey(KeyCode.Joystick1Button3),
-                //GetAxis'in sadece 0 ve -1 arası değerleri bize lazım, pozitif değerleri filtreliyoruz
-                DropHeld = 1 % (Mathf.Abs(Input.GetAxis("VerticalJ1") < 0 ? Input.GetAxis("VerticalJ1") : 0) < .5f
-                    ? 0
-                    : Mathf.Sign(_frameInput.Move.x)) == 0,
-                DashDown = Input.GetKeyDown(KeyCode.Joystick1Button0),
-                ShootHeld = Input.GetKey(KeyCode.Joystick1Button2),
-                Move = new Vector2(Input.GetAxisRaw("HorizontalJ1"), Input.GetAxisRaw("VerticalJ1"))
+                JumpDown = Input.GetKeyDown(KeyCode.JoystickButton3),
+                JumpHeld = Input.GetKey(KeyCode.JoystickButton3),
+                DropHeld = Input.GetAxis("Vertical") < -0.5f,
+                DashDown = Input.GetKeyDown(KeyCode.JoystickButton0),
+                ShootHeld = Input.GetKey(KeyCode.JoystickButton2),
+                Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
             };
         }
-        else if (controlScheme == PlayerControlScheme.Joystick2)
-        {
-            _frameInput = new FrameInput
-            {
-                JumpDown = Input.GetKeyDown(KeyCode.Joystick2Button3),
-                JumpHeld = Input.GetKey(KeyCode.Joystick2Button3),
-                //GetAxis'in sadece 0 ve -1 arası değerleri bize lazım, pozitif değerleri filtreliyoruz
-                DropHeld = 1 % (Mathf.Abs(Input.GetAxis("VerticalJ2") < 0 ? Input.GetAxis("VerticalJ2") : 0) < .5f
-                    ? 0
-                    : Mathf.Sign(_frameInput.Move.x)) == 0,
-                DashDown = Input.GetKeyDown(KeyCode.Joystick2Button0),
-                ShootHeld = Input.GetKey(KeyCode.Joystick2Button2),
-                Move = new Vector2(Input.GetAxisRaw("HorizontalJ2"), Input.GetAxisRaw("VerticalJ2"))
-            };
-        }
-        //Joystick Alt Kontrolleri
-        else if (controlScheme == PlayerControlScheme.JoystickAlt1) //button3 zıplama, button2 ateş, button1 dash
-        {
-            _frameInput = new FrameInput
-            {
-                JumpDown = Input.GetKeyDown(KeyCode.Joystick1Button0),
-                JumpHeld = Input.GetKey(KeyCode.Joystick1Button0),
-                //GetAxis'in sadece 0 ve -1 arası değerleri bize lazım, pozitif değerleri filtreliyoruz
-                DropHeld = 1 % (Mathf.Abs(Input.GetAxis("VerticalJ1") < 0 ? Input.GetAxis("VerticalJ1") : 0) < .5f
-                    ? 0
-                    : Mathf.Sign(_frameInput.Move.x)) == 0,
-                DashDown = Input.GetKeyDown(KeyCode.Joystick1Button1),
-                ShootHeld = Input.GetKey(KeyCode.Joystick1Button2),
-                Move = new Vector2(Input.GetAxisRaw("HorizontalJ1"), Input.GetAxisRaw("VerticalJ1"))
-            };
-        }
-        else if (controlScheme == PlayerControlScheme.JoystickAlt2) //button3 zıplama, button2 ateş, button1 dash
-        {
-            _frameInput = new FrameInput
-            {
-                JumpDown = Input.GetKeyDown(KeyCode.Joystick2Button0),
-                JumpHeld = Input.GetKey(KeyCode.Joystick2Button0),
-                //GetAxis'in sadece 0 ve -1 arası değerleri bize lazım, pozitif değerleri filtreliyoruz
-                DropHeld = 1 % (Mathf.Abs(Input.GetAxis("VerticalJ2") < 0 ? Input.GetAxis("VerticalJ2") : 0) < .5f
-                    ? 0
-                    : Mathf.Sign(_frameInput.Move.x)) == 0,
-                DashDown = Input.GetKeyDown(KeyCode.Joystick2Button1),
-                ShootHeld = Input.GetKey(KeyCode.Joystick2Button2),
-                Move = new Vector2(Input.GetAxisRaw("HorizontalJ2"), Input.GetAxisRaw("VerticalJ2"))
-            };
-        }
-
 
         if (SnapInput)
         {
@@ -277,15 +212,39 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void CheckCollisions()
     {
-        Physics2D.queriesStartInColliders = false;
+        //Physics2D.queriesStartInColliders = false;
 
-        // Ground and Ceiling
-        bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down,
-            GrounderDistance, ~PlayerLayer);
-        bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up,
-            GrounderDistance, ~PlayerLayer);
+        Vector2 center = _col.bounds.center;
+        Vector2 size = _col.size;
+        float directionAngle = 0; // Assuming CapsuleCollider2D direction is vertical
 
-        // Hit a Ceiling
+        bool groundHit =
+            Physics2D.CapsuleCast(center, size, _col.direction, 0, Vector2.down, GrounderDistance, GroundLayer);
+        bool ceilingHit =
+            Physics2D.CapsuleCast(center, size, _col.direction, 0, Vector2.up, GrounderDistance, GroundLayer);
+        if (groundHit)
+        {
+            Debug.Log("Ground detected");
+        }
+        else
+        {
+            Debug.Log("Ground not detected");
+        }
+
+        if (ceilingHit)
+        {
+            Debug.Log("Ceiling detected");
+        }
+        else
+        {
+            Debug.Log("Ceiling not detected");
+        }
+
+        Debug.DrawLine(center, center + Vector2.down * (GrounderDistance + size.y / 2),
+            groundHit ? Color.green : Color.red);
+        Debug.DrawLine(center, center + Vector2.up * (GrounderDistance + size.y / 2),
+            ceilingHit ? Color.green : Color.red);
+
         if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
 
         // Landed on the Ground

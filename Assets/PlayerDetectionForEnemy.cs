@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerDetectionForEnemy : MonoBehaviour
 {
     public Enemy enemy;
-        private readonly string playerTag = "Player";
+    private readonly string playerTag = "Player";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +13,7 @@ public class PlayerDetectionForEnemy : MonoBehaviour
             enemy.isPlayerPetrolArea = true;
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))

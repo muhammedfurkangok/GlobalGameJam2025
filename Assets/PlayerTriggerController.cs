@@ -7,7 +7,7 @@ public class PlayerTriggerController : MonoBehaviour
     [SerializeField] private PlayerHealthController playerHealthController;
     
     [Header("Tags")]
-    private const string zombieDamageTag = "ZombieDamage";
+    private const string zombieDamageTag = "Zombie";
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,7 +30,7 @@ public class PlayerTriggerController : MonoBehaviour
     {
         if (other.CompareTag(zombieDamageTag))
         {
-            playerHealthController.canTakeDamage = false;
+            playerHealthController.canTakeDamage = true;
         }
     }
 }

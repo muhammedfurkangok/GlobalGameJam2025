@@ -9,6 +9,7 @@ TagManager:
   - TargetLight
   - Missile
   - App
+  - Zombie
   layers:
   - Default
   - TransparentFX

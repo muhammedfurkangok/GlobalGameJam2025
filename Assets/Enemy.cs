@@ -1,83 +1,111 @@
 ﻿using System;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform target;
-    [SerializeField] private Animator _animator;
+    public bool isPlayerPetrolArea;
+    public bool isPlayerDetected;
+    public Transform[] patrolPoints;
+    public float patrolSpeed = 2f;
+    public float attackRange = 1.5f;
+    public float attackCooldown = 1f;
+    public int health = 100;
+    public CapsuleCollider2D capsuleCollider;
 
-    [Space]
+    private int currentPatrolIndex;
+    private Transform player;
+    private float lastAttackTime;
 
-    [SerializeField] Transform shadow;
-
-    public float speed = 2f;
-
-    private bool isAlive = true;
-
-    private void Awake()
+    private void Start()
     {
-        Health health = GetComponent<Health>();
-        health.health = UnityEngine.Random.Range(2,10);
-        health.OnDeath += Dead;
+        currentPatrolIndex = 0;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void OnGlitch()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        agent.isStopped = true;
-        _animator.enabled = false;
-    }
-
-    private async void Start()
-    {
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        agent.speed = speed;
-        _animator.SetBool("isWalking", true);
-
-        while (true && isAlive)
+        if (other.CompareTag("Player"))
         {
-            await UniTask.WaitForSeconds(0.2f);
-            agent.SetDestination(new Vector3(target.position.x, target.position.y, transform.position.z));
-            HandleFlip();
+            isPlayerDetected = true;
         }
     }
 
-    private void HandleFlip()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (target.position.x > transform.position.x && transform.localScale.x < 0)
+        if (other.CompareTag("Player"))
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
-        else if (target.position.x < transform.position.x && transform.localScale.x > 0)
-        {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            isPlayerDetected = false;
         }
     }
 
-    private void Dead()
+    private void Update()
     {
-        _animator.SetBool("isWalking", false);
-        _animator.SetTrigger("Die");
-        agent.isStopped = true;
-        agent.enabled = false;
-        isAlive = false;
-        SoundManager.Instance.PlayOneShotSound(SoundType.ZombieDeath, 0.5f);
-        ShadowFixOnDeath();
-        GetComponent<Collider2D>().enabled = false;
+        if (health <= 0)
+        {
+            Die();
+            return;
+        }
+
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (isPlayerPetrolArea || isPlayerDetected)
+        {
+            ChasePlayer();
+
+            if (distanceToPlayer <= attackRange)
+            {
+                Attack();
+            }
+        }
+        else
+        {
+            Patrol();
+        }
     }
 
-    private void ShadowFixOnDeath()
+    private void ChasePlayer()
     {
-        shadow.gameObject.SetActive(false); // or strecth the shadow to accomodate.
+        transform.position = Vector2.MoveTowards(transform.position, player.position, patrolSpeed * Time.deltaTime);
     }
 
 
-    public void SetPlayer(Transform player)
+    private void Patrol()
     {
-        target = player.transform;
+        Debug.Log("Patrolling");
+        Transform targetPoint = patrolPoints[currentPatrolIndex];
+        transform.position =
+            Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f)
+        {
+            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
+        }
     }
 
+    private void Attack()
+    {
+        if (Time.time - lastAttackTime >= attackCooldown)
+        {
+            // Attack logic here (e.g., reduce player health)
+            Debug.Log("Attacking the player");
+            lastAttackTime = Time.time;
+        }
+    }
+
+    private void Die()
+    {
+        // Die logic here (e.g., play animation, destroy object)
+        Debug.Log("Enemy died");
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
 }

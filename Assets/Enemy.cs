@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -6,8 +7,10 @@ public class Enemy : MonoBehaviour
 {
     public bool isPlayerPetrolArea;
     public bool isPlayerDetected;
+    public bool changingPatrolPoint;
     public Transform[] patrolPoints;
-    public float patrolSpeed = 2f;
+    public float patrolSpeed = 1f;
+    public float chaseSpeed = 2f;
     public float attackRange = 1.5f;
     public float attackCooldown = 1f;
     public int health = 100;
@@ -16,6 +19,7 @@ public class Enemy : MonoBehaviour
     private int currentPatrolIndex;
     private Transform player;
     private float lastAttackTime;
+    private bool facingRight = true;
 
     private void Start()
     {
@@ -66,20 +70,36 @@ public class Enemy : MonoBehaviour
 
     private void ChasePlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, patrolSpeed * Time.deltaTime);
+        Vector2 targetPosition = player.position;
+        FlipTowards(targetPosition);
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
     }
 
-
-    private void Patrol()
+    private async void Patrol()
     {
         Debug.Log("Patrolling");
         Transform targetPoint = patrolPoints[currentPatrolIndex];
-        transform.position =
-            Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
+        FlipTowards(targetPoint.position);
+        transform.position = Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f)
+        if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f && !isPlayerDetected &&
+            !isPlayerPetrolArea && !changingPatrolPoint)
         {
+            changingPatrolPoint = true;
+            await UniTask.WaitForSeconds(1);
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
+            changingPatrolPoint = false;
+        }
+    }
+
+    private void FlipTowards(Vector2 targetPosition)
+    {
+        if ((targetPosition.x > transform.position.x && !facingRight) || (targetPosition.x < transform.position.x && facingRight))
+        {
+            facingRight = !facingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
         }
     }
 

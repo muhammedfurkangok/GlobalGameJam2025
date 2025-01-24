@@ -7459,6 +7459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kan_efekti
       objectReference: {fileID: 0}
+    - target: {fileID: 6845602359804767877, guid: 14e0d1b8245b00748b72983c181e68f1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

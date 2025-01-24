@@ -212,33 +212,14 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void CheckCollisions()
     {
-        //Physics2D.queriesStartInColliders = false;
-
         Vector2 center = _col.bounds.center;
         Vector2 size = _col.size;
-        float directionAngle = 0; // Assuming CapsuleCollider2D direction is vertical
+        float directionAngle = 0;
 
         bool groundHit =
             Physics2D.CapsuleCast(center, size, _col.direction, 0, Vector2.down, GrounderDistance, GroundLayer);
         bool ceilingHit =
             Physics2D.CapsuleCast(center, size, _col.direction, 0, Vector2.up, GrounderDistance, GroundLayer);
-        if (groundHit)
-        {
-            Debug.Log("Ground detected");
-        }
-        else
-        {
-            Debug.Log("Ground not detected");
-        }
-
-        if (ceilingHit)
-        {
-            Debug.Log("Ceiling detected");
-        }
-        else
-        {
-            Debug.Log("Ceiling not detected");
-        }
 
         Debug.DrawLine(center, center + Vector2.down * (GrounderDistance + size.y / 2),
             groundHit ? Color.green : Color.red);
@@ -259,7 +240,6 @@ public class PlayerController : MonoBehaviour, IPlayerController
             _nextDashTime = _time;
             GroundedChanged?.Invoke(true, Mathf.Abs(_frameVelocity.y));
         }
-        // Left the Ground
         else if (_grounded && !groundHit)
         {
             _grounded = false;
@@ -282,7 +262,6 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private bool _coyoteUsable;
 
-    // Must be less than -1 * JumpBuffer, otherwise can trigger a jump at the start. Set to -100 for good measure.
     private float _timeJumpWasPressed = -100;
     private int _airJumps;
 

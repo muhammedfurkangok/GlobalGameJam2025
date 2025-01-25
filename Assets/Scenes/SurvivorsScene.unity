@@ -7267,25 +7267,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1133854316629961180, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3358977055094801596, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5989379563366705377, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6960349997269918559, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_Name
       value: RangedEnemyArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 6960349997269918559, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7405040554414930071, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7383,10 +7367,6 @@ PrefabInstance:
     - target: {fileID: 5661095718101924119, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: m_Name
       value: MeleEnemyArea
-      objectReference: {fileID: 0}
-    - target: {fileID: 5661095718101924119, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

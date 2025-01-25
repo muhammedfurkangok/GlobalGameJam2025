@@ -12,6 +12,7 @@ TagManager:
   - Zombie
   - RangeProjectile
   - Enemy
+  - Platform
   layers:
   - Default
   - TransparentFX

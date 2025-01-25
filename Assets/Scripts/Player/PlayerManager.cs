@@ -12,6 +12,7 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
     public PlayerController PlayerController;
     public PlayerCombatController playerCombatController;
     public Animator animator;
+    public Rigidbody2D playerRigidbody2D;
 
 
     private void Start()

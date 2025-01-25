@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerCombatController : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject capturePrefab;
     public Transform muzzle;
     public float projectileSpeed = 10f;
     public float chargeSpeedMultiplier = 2f;

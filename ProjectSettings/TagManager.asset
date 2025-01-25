@@ -11,6 +11,7 @@ TagManager:
   - App
   - Zombie
   - RangeProjectile
+  - Enemy
   layers:
   - Default
   - TransparentFX

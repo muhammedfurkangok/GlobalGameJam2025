@@ -6632,6 +6632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6845602359804767877, guid: 14e0d1b8245b00748b72983c181e68f1, type: 3}
+  capturePrefab: {fileID: 6845602359804767877, guid: f38b0782222ec824fa96c7472703fcf7, type: 3}
   muzzle: {fileID: 615711538}
   projectileSpeed: 2
   chargeSpeedMultiplier: 2
@@ -7426,6 +7427,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2924260185622762312, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4429149245633102874, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.563

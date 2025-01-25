@@ -7267,13 +7267,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4894576410471616149, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6960349997269918559, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_Name
       value: RangedEnemyArea
       objectReference: {fileID: 0}
     - target: {fileID: 6960349997269918559, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7405040554414930071, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7394,7 +7398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5661095718101924119, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8665635777815396497, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: attackRange

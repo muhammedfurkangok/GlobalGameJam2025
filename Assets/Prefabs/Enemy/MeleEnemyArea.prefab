@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 8665635777815396497}
   m_Layer: 6
   m_Name: Warrior
-  m_TagString: Zombie
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 737797348, guid: e8a55aa487ae70e4990b268b3b9d6732, type: 3}
-  m_Color: {r: 0.94509804, g: 0.7956702, b: 0.5019608, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -277,10 +277,11 @@ MonoBehaviour:
   - {fileID: 3009036348574693997}
   patrolSpeed: 1
   chaseSpeed: 1.5
-  attackRange: 1.5
+  attackRange: 0.75
   attackCooldown: 1
   health: 100
   capsuleCollider: {fileID: 3247126472607262602}
+  isPlatformEnemy: 1
 --- !u!1 &4395635704280102649
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4429149245633102874
 Transform:
   m_ObjectHideFlags: 0
@@ -417,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44227c6d0b271f64185118a22a5b38b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieEnemy: {fileID: 8665635777815396497}
+  meleeEnemy: {fileID: 8665635777815396497}
 --- !u!61 &3785085699498575805
 BoxCollider2D:
   m_ObjectHideFlags: 0

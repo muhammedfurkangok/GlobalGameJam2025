@@ -196,9 +196,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
 
     public void Stun()
     {
-        animator.SetTrigger("Death");
-        Debug.Log("Enemy died");
-        Destroy(gameObject);
+        IsStunned = true;
     }
 
     public void TakeDamage(int damage)

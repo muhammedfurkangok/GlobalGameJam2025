@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 7893229872009282216}
   m_Layer: 6
   m_Name: Siren
-  m_TagString: Zombie
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

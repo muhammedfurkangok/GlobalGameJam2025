@@ -9,7 +9,6 @@ TagManager:
   - TargetLight
   - Missile
   - App
-  - Zombie
   - RangeProjectile
   - Enemy
   - Platform

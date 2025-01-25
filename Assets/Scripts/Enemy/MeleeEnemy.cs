@@ -1,5 +1,4 @@
-﻿using System;
-using Cysharp.Threading.Tasks;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour, IEnemy
@@ -10,7 +9,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     public Transform[] patrolPoints;
     public float patrolSpeed = 1f;
     public float chaseSpeed = 2f;
-    public float attackRange = 1.5f;
+    public float attackRange = 0.75f;
     public float attackCooldown = 1f;
     public int health = 100;
     public CapsuleCollider2D capsuleCollider;
@@ -37,6 +36,13 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     {
         get => changingPatrolPoint;
         set => changingPatrolPoint = value;
+    }
+
+    [SerializeField] private bool isPlatformEnemy;
+    public bool IsPlatformEnemy
+    {
+        get => isPlatformEnemy;
+        set => isPlatformEnemy = value;
     }
 
     public bool IsStunned { get; set; }
@@ -108,7 +114,6 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
 
     private void Update()
     {
-        
         if (health <= 0)
         {
             Stun();
@@ -142,16 +147,6 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
         if (distanceToPlayer > attackRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
-        }
-    }
-    
-    private void CheckCollision()
-    {
-        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, attackRange, LayerMask.GetMask("Player"));
-
-        if (playerCollider != null)
-        {
-            playerCollider.GetComponent<PlayerHealthController>().TakeDamage(10);
         }
     }
 
@@ -200,10 +195,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     public void Stun()
     {
         IsStunned = true;
-         
-        
-        
-        
+
         Debug.Log("Enemy died");
     }
 

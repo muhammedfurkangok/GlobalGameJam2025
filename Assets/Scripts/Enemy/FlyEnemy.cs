@@ -41,6 +41,8 @@ public class FlyEnemy : MonoBehaviour, IEnemy
         set => changingPatrolPoint = value;
     }
 
+    public bool IsPlatformEnemy { get; set; }
+
     public bool IsStunned { get; set; }
 
     public Transform[] PatrolPoints

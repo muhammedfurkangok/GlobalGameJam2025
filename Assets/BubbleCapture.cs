@@ -16,7 +16,7 @@ public class BubbleCapture : MonoBehaviour
     private void Update()
     {
         if (playerDetected) return;
-        
+
         transform.Translate(direction * (speed * Time.deltaTime));
     }
 
@@ -26,11 +26,18 @@ public class BubbleCapture : MonoBehaviour
         {
             var enemy = other.GetComponent<IEnemy>();
 
-            if (enemy.IsStunned)
+            if (enemy.IsStunned && !enemy.IsPlatformEnemy)
             {
                 other.transform.SetParent(this.transform);
-                
+                other.transform.DOLocalMove(Vector3.zero, 0.2f).SetEase(Ease.OutBounce);
                 transform.DOLocalMoveY(transform.localPosition.y + 10f, 5f).SetEase(Ease.OutBounce);
+            }
+            else if (enemy.IsStunned && enemy.IsPlatformEnemy)
+            {
+                playerDetected = true;
+                other.transform.SetParent(this.transform);
+                other.transform.DOLocalMove(Vector3.zero, 0.2f).SetEase(Ease.OutBounce);
+               transform.DOLocalMoveY(transform.localPosition.y + 1f, 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
             }
             else
             {

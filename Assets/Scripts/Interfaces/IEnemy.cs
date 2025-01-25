@@ -5,6 +5,8 @@ public interface IEnemy
     bool IsPlayerPetrolArea { get; set; }
     bool IsPlayerDetected { get; set; }
     bool ChangingPatrolPoint { get; set; }
+    
+    bool IsPlatformEnemy { get; set; }
     bool IsStunned { get; set; }
     Transform[] PatrolPoints { get; set; }
     float PatrolSpeed { get; set; }

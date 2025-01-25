@@ -21,6 +21,7 @@ public class BubbleCapture : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<IEnemy>().TakeDamage(10);
+            Destroy(gameObject);
         }
     }
 }

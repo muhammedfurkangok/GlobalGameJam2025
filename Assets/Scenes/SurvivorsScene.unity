@@ -836,50 +836,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &616851018
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 616851019}
-  - component: {fileID: 616851020}
-  m_Layer: 0
-  m_Name: SequenceManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &616851019
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616851018}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 812.75354, y: 588.441, z: -791.43884}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &616851020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616851018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119e2c567c7017643b0c77273c464051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &642623307
 GameObject:
   m_ObjectHideFlags: 0
@@ -6469,7 +6425,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.25881857, y: -0, z: -0, w: 0.96592593}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 613076954}
@@ -6662,6 +6618,7 @@ MonoBehaviour:
   playerController: {fileID: 1513436470}
   PlayerController: {fileID: 1513436470}
   playerCombatController: {fileID: 1513436475}
+  animator: {fileID: 613076956}
 --- !u!114 &1513436475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7412,6 +7369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemyArea
       objectReference: {fileID: 0}
+    - target: {fileID: 6960349997269918559, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7405040554414930071, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.82
@@ -7465,10 +7426,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4287008466328616317, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4429149245633102874, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.563
@@ -7509,21 +7466,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5300063591954623419, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5661095718101924119, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: m_Name
       value: MeleEnemyArea
       objectReference: {fileID: 0}
-    - target: {fileID: 8665635777815396497, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: chaseSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8704376835356380419, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 5661095718101924119, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7537,13 +7486,12 @@ SceneRoots:
   - {fileID: 479065245}
   - {fileID: 1985651297}
   - {fileID: 6892435413370516306}
-  - {fileID: 2495734067986353807}
   - {fileID: 4799147989140985351}
+  - {fileID: 2495734067986353807}
   - {fileID: 1513436461}
   - {fileID: 2427691686174881331}
   - {fileID: 3331472360527739001}
   - {fileID: 642623308}
-  - {fileID: 616851019}
   - {fileID: 1631493110}
   - {fileID: 439097672}
   - {fileID: 804435949}

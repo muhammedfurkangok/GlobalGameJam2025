@@ -21,16 +21,65 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
     private float lastAttackTime;
     private bool facingRight = true;
 
-    public bool IsPlayerPetrolArea { get => isPlayerPetrolArea; set => isPlayerPetrolArea = value; }
-    public bool IsPlayerDetected { get => isPlayerDetected; set => isPlayerDetected = value; }
-    public bool ChangingPatrolPoint { get => changingPatrolPoint; set => changingPatrolPoint = value; }
-    public Transform[] PatrolPoints { get => patrolPoints; set => patrolPoints = value; }
-    public float PatrolSpeed { get => patrolSpeed; set => patrolSpeed = value; }
-    public float ChaseSpeed { get => chaseSpeed; set => chaseSpeed = value; }
-    public float AttackRange { get => attackRange; set => attackRange = value; }
-    public float AttackCooldown { get => attackCooldown; set => attackCooldown = value; }
-    public int Health { get => health; set => health = value; }
-    public CapsuleCollider2D CapsuleCollider { get => capsuleCollider; set => capsuleCollider = value; }
+    public bool IsPlayerPetrolArea
+    {
+        get => isPlayerPetrolArea;
+        set => isPlayerPetrolArea = value;
+    }
+
+    public bool IsPlayerDetected
+    {
+        get => isPlayerDetected;
+        set => isPlayerDetected = value;
+    }
+
+    public bool ChangingPatrolPoint
+    {
+        get => changingPatrolPoint;
+        set => changingPatrolPoint = value;
+    }
+
+    public Transform[] PatrolPoints
+    {
+        get => patrolPoints;
+        set => patrolPoints = value;
+    }
+
+    public float PatrolSpeed
+    {
+        get => patrolSpeed;
+        set => patrolSpeed = value;
+    }
+
+    public float ChaseSpeed
+    {
+        get => chaseSpeed;
+        set => chaseSpeed = value;
+    }
+
+    public float AttackRange
+    {
+        get => attackRange;
+        set => attackRange = value;
+    }
+
+    public float AttackCooldown
+    {
+        get => attackCooldown;
+        set => attackCooldown = value;
+    }
+
+    public int Health
+    {
+        get => health;
+        set => health = value;
+    }
+
+    public CapsuleCollider2D CapsuleCollider
+    {
+        get => capsuleCollider;
+        set => capsuleCollider = value;
+    }
 
     private void Start()
     {
@@ -93,7 +142,8 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
         animator.SetBool("IsRunning", true);
         Transform targetPoint = patrolPoints[currentPatrolIndex];
         FlipTowards(targetPoint.position);
-        transform.position = Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
+        transform.position =
+            Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f && !isPlayerDetected &&
             !isPlayerPetrolArea && !changingPatrolPoint)
@@ -108,7 +158,8 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
 
     private void FlipTowards(Vector2 targetPosition)
     {
-        if ((targetPosition.x > transform.position.x && !facingRight) || (targetPosition.x < transform.position.x && facingRight))
+        if ((targetPosition.x > transform.position.x && !facingRight) ||
+            (targetPosition.x < transform.position.x && facingRight))
         {
             facingRight = !facingRight;
             Vector3 localScale = transform.localScale;
@@ -122,6 +173,14 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
         if (Time.time - lastAttackTime >= attackCooldown)
         {
             animator.SetTrigger("Attack");
+
+            Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, attackRange, LayerMask.GetMask("Player"));
+
+            if (playerCollider != null)
+            {
+                playerCollider.GetComponent<PlayerHealthController>().TakeDamage(10);
+            }
+
             Debug.Log("Attacking the player");
             lastAttackTime = Time.time;
         }

@@ -11,6 +11,7 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
     public PlayerController playerController;
     public PlayerController PlayerController;
     public PlayerCombatController playerCombatController;
+    public Animator animator;
 
 
     private void Start()

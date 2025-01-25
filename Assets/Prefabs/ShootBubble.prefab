@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5414702006476501203}
   - component: {fileID: 6215955905637617138}
   m_Layer: 0
-  m_Name: kan_efekti
+  m_Name: ShootBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

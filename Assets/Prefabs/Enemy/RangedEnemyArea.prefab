@@ -281,7 +281,7 @@ MonoBehaviour:
   attackCooldown: 1
   health: 100
   capsuleCollider: {fileID: 7591012473261211310}
-  projectilePrefab: {fileID: 6845602359804767877, guid: 14e0d1b8245b00748b72983c181e68f1, type: 3}
+  projectilePrefab: {fileID: 2745090639798145894, guid: 59ed0afa160bf044aae27752bb6a72a9, type: 3}
   firePoint: {fileID: 224920378392896359}
 --- !u!1 &5558670892865088815
 GameObject:

@@ -12,13 +12,16 @@ public class PlayerHealthController : MonoBehaviour
         if (!canTakeDamage) return;
 
         canTakeDamage = false;
+        PlayerManager.Instance.animator.SetTrigger("Hit");
         health -= damage;
         PlayerManager.Instance.playerUIController.UpdateImageFill();
-        //damage anim
         if (health <= 0)
         {
             Die();
         }
+
+        await UniTask.WaitForSeconds(1f);
+        canTakeDamage = true;
     }
 
     public void Die()

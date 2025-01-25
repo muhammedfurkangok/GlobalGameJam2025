@@ -45,9 +45,9 @@ public class PlayerCombatController : MonoBehaviour
     {
         isCharging = false;
         float chargeTime = Time.time - chargeStartTime;
-        GameObject projectile = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
-        BubbleProjectile projectileScript = projectile.GetComponent<BubbleProjectile>();
-        projectileScript.SetDirection(PlayerManager.Instance.playerController.GetFacingDirection());
-        projectileScript.speed = projectileSpeed + (chargeSpeedMultiplier * chargeTime);
+        GameObject bubbleForCarry = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
+        BubbleCapture bubbleCapture = bubbleForCarry.GetComponent<BubbleCapture>();
+        bubbleCapture.SetDirection(PlayerManager.Instance.playerController.GetFacingDirection());
+        bubbleCapture.speed = projectileSpeed + (chargeSpeedMultiplier * chargeTime);
     }
 }

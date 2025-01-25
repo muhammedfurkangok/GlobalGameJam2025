@@ -1,8 +1,6 @@
-﻿
-using System;
+﻿using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ZombieEnemy : MonoBehaviour, IEnemy
 {
@@ -17,6 +15,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
     public int health = 100;
     public CapsuleCollider2D capsuleCollider;
 
+    private Animator animator;
     private int currentPatrolIndex;
     private Transform player;
     private float lastAttackTime;
@@ -35,6 +34,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         currentPatrolIndex = 0;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -82,6 +82,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
 
     private void ChasePlayer()
     {
+        animator.SetBool("IsRunning", true);
         Vector2 targetPosition = player.position;
         FlipTowards(targetPosition);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
@@ -89,7 +90,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
 
     private async void Patrol()
     {
-        Debug.Log("Patrolling");
+        animator.SetBool("IsRunning", true);
         Transform targetPoint = patrolPoints[currentPatrolIndex];
         FlipTowards(targetPoint.position);
         transform.position = Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
@@ -98,6 +99,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
             !isPlayerPetrolArea && !changingPatrolPoint)
         {
             changingPatrolPoint = true;
+            animator.SetBool("IsRunning", false);
             await UniTask.WaitForSeconds(1);
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
             changingPatrolPoint = false;
@@ -119,7 +121,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
     {
         if (Time.time - lastAttackTime >= attackCooldown)
         {
-            // Attack logic here (e.g., reduce player health)
+            animator.SetTrigger("Attack");
             Debug.Log("Attacking the player");
             lastAttackTime = Time.time;
         }
@@ -127,13 +129,14 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
 
     public void Die()
     {
-        // Die logic here (e.g., play animation, destroy object)
+        animator.SetTrigger("Death");
         Debug.Log("Enemy died");
         Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)
         {

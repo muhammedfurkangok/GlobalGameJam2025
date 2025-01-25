@@ -10,17 +10,18 @@ public class FlyEnemy : MonoBehaviour, IEnemy
     public Transform[] patrolPoints;
     public float patrolSpeed = 1f;
     public float chaseSpeed = 2f;
-    public float chargeSpeed = 5f; // Speed during charge attack
+    public float chargeSpeed = 5f;
     public float attackRange = 1.5f;
     public float attackCooldown = 1f;
     public int health = 100;
     public CapsuleCollider2D capsuleCollider;
 
+    private Animator animator;
     private int currentPatrolIndex;
     private Transform player;
     private float lastAttackTime;
     private bool facingRight = true;
-    private bool isCharging = false; // Tracks if the enemy is charging
+    private bool isCharging = false;
 
     public bool IsPlayerPetrolArea
     {
@@ -90,6 +91,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         currentPatrolIndex = 0;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -143,6 +145,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
 
     private void ChasePlayer()
     {
+        animator.SetBool("IsRunning", true);
         Vector2 targetPosition = player.position;
         FlipTowards(targetPosition);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
@@ -150,7 +153,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
 
     private async void Patrol()
     {
-        Debug.Log("Patrolling");
+        animator.SetBool("IsRunning", true);
         Transform targetPoint = patrolPoints[currentPatrolIndex];
         FlipTowards(targetPoint.position);
         transform.position =
@@ -160,6 +163,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
             !isPlayerPetrolArea && !changingPatrolPoint)
         {
             changingPatrolPoint = true;
+            animator.SetBool("IsRunning", false);
             await UniTask.WaitForSeconds(0.5f);
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
             changingPatrolPoint = false;
@@ -184,6 +188,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
         {
             isCharging = true;
             lastAttackTime = Time.time;
+            animator.SetTrigger("Attack");
             ChargeAttack().Forget();
         }
     }
@@ -198,7 +203,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
         while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, chargeSpeed * Time.deltaTime);
-            await UniTask.Yield(); // Update her frame'de devam etsin
+            await UniTask.Yield();
         }
 
         Debug.Log("Charging attack hit the player");
@@ -207,12 +212,14 @@ public class FlyEnemy : MonoBehaviour, IEnemy
 
     public void Die()
     {
+        animator.SetTrigger("Death");
         Debug.Log("Enemy died");
         Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)
         {

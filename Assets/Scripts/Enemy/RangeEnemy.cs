@@ -8,13 +8,14 @@ public class RangeEnemy : MonoBehaviour, IEnemy
     public bool changingPatrolPoint;
     public Transform[] patrolPoints;
     public float patrolSpeed = 1f;
-    public float attackRange = 5f; // Adjusted attack range for ranged enemy
+    public float attackRange = 5f;
     public float attackCooldown = 1f;
     public int health = 100;
     public CapsuleCollider2D capsuleCollider;
-    public GameObject projectilePrefab; // Projectile prefab reference
-    public Transform firePoint; // Projectile spawn point
+    public GameObject projectilePrefab;
+    public Transform firePoint;
 
+    private Animator animator;
     private int currentPatrolIndex;
     private Transform player;
     private float lastAttackTime;
@@ -78,6 +79,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         currentPatrolIndex = 0;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -116,7 +118,6 @@ public class RangeEnemy : MonoBehaviour, IEnemy
             }
             else
             {
-                // Optionally, move closer to the player but stay within the attack range
                 MoveTowardsPlayer();
             }
         }
@@ -128,6 +129,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
 
     private void MoveTowardsPlayer()
     {
+        animator.SetBool("IsRunning", true);
         Vector2 targetPosition = player.position;
         FlipTowards(targetPosition);
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, patrolSpeed * Time.deltaTime);
@@ -135,7 +137,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
 
     private async void Patrol()
     {
-        Debug.Log("Patrolling");
+        animator.SetBool("IsRunning", true);
         Transform targetPoint = patrolPoints[currentPatrolIndex];
         FlipTowards(targetPoint.position);
         transform.position =
@@ -145,6 +147,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
             !isPlayerPetrolArea && !changingPatrolPoint)
         {
             changingPatrolPoint = true;
+            animator.SetBool("IsRunning", false);
             await UniTask.WaitForSeconds(1);
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
             changingPatrolPoint = false;
@@ -167,7 +170,8 @@ public class RangeEnemy : MonoBehaviour, IEnemy
     {
         if (Time.time - lastAttackTime >= attackCooldown)
         {
-            // Launch the projectile
+            animator.SetBool("IsRunning", false);
+            animator.SetTrigger("Attack");
             LaunchProjectile();
             lastAttackTime = Time.time;
         }
@@ -177,10 +181,10 @@ public class RangeEnemy : MonoBehaviour, IEnemy
     {
         if (projectilePrefab != null && firePoint != null)
         {
-            // Instantiate the projectile and move it towards the player
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Vector2 direction = (player.position - firePoint.position).normalized;
-            projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * 10f; // Adjust projectile speed as needed
+            projectile.GetComponent<Rigidbody2D>().linearVelocity =
+                direction * 10f;
 
             Debug.Log("Projectile launched towards the player");
         }
@@ -188,13 +192,14 @@ public class RangeEnemy : MonoBehaviour, IEnemy
 
     public void Die()
     {
-        // Die logic here (e.g., play animation, destroy object)
+        animator.SetTrigger("Death");
         Debug.Log("Enemy died");
         Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)
         {

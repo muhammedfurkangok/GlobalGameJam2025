@@ -20196,7 +20196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!198 &1020120697
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -31264,7 +31264,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1513436470
 MonoBehaviour:
@@ -31334,6 +31334,7 @@ MonoBehaviour:
   PlayerController: {fileID: 0}
   playerCombatController: {fileID: 0}
   animator: {fileID: 0}
+  playerRigidbody2D: {fileID: 0}
 --- !u!114 &1513436475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31378,6 +31379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560767b39a5ace64b9c9bc95bfc8515c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 500
 --- !u!1 &1590556622
 GameObject:
   m_ObjectHideFlags: 0

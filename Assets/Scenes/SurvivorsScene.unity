@@ -391,7 +391,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5.92
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6525,6 +6525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560767b39a5ace64b9c9bc95bfc8515c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 925.1
 --- !u!70 &1513436478
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6979,7 +6980,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 3
+    OrthographicSize: 5.92
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0

@@ -2,16 +2,16 @@ using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerDetectionForFlyEnemy : MonoBehaviour
+public class PlayerDetectionForRangedEnemy : MonoBehaviour
 {
-    public FlyEnemy flyEnemy;
+    public RangeEnemy rangeEnemy;
     private readonly string playerTag = "Player";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))
         {
-            flyEnemy.isPlayerPetrolArea = true;
+            rangeEnemy.isPlayerPetrolArea = true;
         }
     }
 
@@ -19,7 +19,7 @@ public class PlayerDetectionForFlyEnemy : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            flyEnemy.isPlayerPetrolArea = false;
+            rangeEnemy.isPlayerPetrolArea = false;
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿
+using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Enemy : MonoBehaviour, IEnemy
+public class ZombieEnemy : MonoBehaviour, IEnemy
 {
     public bool isPlayerPetrolArea;
     public bool isPlayerDetected;

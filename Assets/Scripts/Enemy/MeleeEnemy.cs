@@ -39,6 +39,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     }
 
     [SerializeField] private bool isPlatformEnemy;
+
     public bool IsPlatformEnemy
     {
         get => isPlatformEnemy;
@@ -169,6 +170,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
         }
     }
 
+
     private void FlipTowards(Vector2 targetPosition)
     {
         if ((targetPosition.x > transform.position.x && !facingRight) ||
@@ -181,12 +183,22 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
         }
     }
 
+    private void CheckCollision()
+    {
+        Collider2D[] hitEnemies =
+            Physics2D.OverlapCircleAll(transform.position, attackRange, LayerMask.GetMask("Player"));
+
+        foreach (var enemy in hitEnemies)
+        {
+            enemy.GetComponent<PlayerManager>().playerHealthController.TakeDamage(10);
+        }
+    }
+
     public void Attack()
     {
         if (Time.time - lastAttackTime >= attackCooldown)
         {
             animator.SetTrigger("Attack");
-
             Debug.Log("Attacking the player");
             lastAttackTime = Time.time;
         }

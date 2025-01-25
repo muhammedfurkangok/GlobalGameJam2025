@@ -7267,9 +7267,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4894576410471616149, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
+    - target: {fileID: 1133854316629961180, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358977055094801596, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989379563366705377, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6960349997269918559, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_Name
@@ -7277,7 +7285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6960349997269918559, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7405040554414930071, guid: 47ecc667fc28b27459535ed51a9805dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7332,26 +7340,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2709741423727089143, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924260185622762312, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225913023983761166, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225913023983761166, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4225913023983761166, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4429149245633102874, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.563
@@ -7398,14 +7386,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5661095718101924119, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665635777815396497, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: attackRange
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8665635777815396497, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
-      propertyPath: isPlatformEnemy
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

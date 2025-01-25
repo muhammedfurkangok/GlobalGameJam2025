@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2678369285797956214}
   m_Layer: 0
   m_Name: WandProjectile
-  m_TagString: Untagged
+  m_TagString: RangeProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

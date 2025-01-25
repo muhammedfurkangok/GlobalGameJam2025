@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
     private FrameInput _frameInput;
     private Vector2 _frameVelocity;
     private bool _cachedQueryStartInColliders;
+    private bool _facingRight = true;
 
     public enum PlayerControlScheme
     {
@@ -326,6 +327,19 @@ public class PlayerController : MonoBehaviour, IPlayerController
             _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * MaxSpeed,
                 Acceleration * Time.fixedDeltaTime);
         }
+
+        FlipCharacter();
+    }
+
+    private void FlipCharacter()
+    {
+        if ((_frameInput.Move.x > 0 && !_facingRight) || (_frameInput.Move.x < 0 && _facingRight))
+        {
+            _facingRight = !_facingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
     }
 
     #endregion
@@ -399,6 +413,11 @@ public class PlayerController : MonoBehaviour, IPlayerController
     #endregion
 
     private void ApplyMovement() => _rb.linearVelocity = _frameVelocity;
+
+    public Vector2 GetFacingDirection()
+    {
+        return _facingRight ? Vector2.right : Vector2.left;
+    }
 }
 
 public struct FrameInput

@@ -1,0 +1,1422 @@
+fileFormatVersion: 2
+guid: 8e1741703798d3648a3601b2b5b11358
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_1"
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 140
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f40ab32501e7e4ba83173a37e1e896
+      internalID: 1510558050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_2"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 140
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41764bba68bd79e44a50fe8c23559fe7
+      internalID: -1100004844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_4"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e46bc50a5f0102429a5217eb51c776d
+      internalID: 2060245691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_5"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 117
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bb1a113dc3e844ab0a3d5624f55104
+      internalID: -1533240446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_6"
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 131
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75606c94c638842469c6ff416dad35db
+      internalID: 1526142783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_7"
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e050498330ee84ab0b183b37049148
+      internalID: -1214340196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_8"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 119
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1f0f9d1037b8c4587b4a413b2871d4
+      internalID: -766498743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_9"
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 114
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c0d0ce906897145bc24da2acad637e
+      internalID: 1151595741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_10"
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 114
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9a06e2451178b49bd53cd3595fe385
+      internalID: 823124586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_11"
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 98
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a558ce86122a338428927a362f4d96d9
+      internalID: 1430089315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_12"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 98
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9bffda3d20cab140a95bc34302c55c8
+      internalID: -1776793536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_13"
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 100
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be97d0c4017eccb49aac702821bc45dd
+      internalID: -1214596992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_14"
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 102
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7.5, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7.5, y: 3}
+        - {x: -7.5, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7.5, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b577b52233e6bf47a5eafbfe9534d46
+      internalID: -1819100191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_15"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9968cd4614267824a9b708343b46d6f0
+      internalID: 341137765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_16"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee701aff211c8f441a79e8e945f592e2
+      internalID: 952492101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_17"
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 98
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e692e1a80e6c94ba7be29e25b52186
+      internalID: 1158901516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_18"
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 97
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969c8e31fed7de746a7dd0af0fc1852a
+      internalID: 670966452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_19"
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 84
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7, y: 3}
+        - {x: -7, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4f60a4f58f9ea44bab169cc0be4d1d
+      internalID: 1857645229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_20"
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 84
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7.5, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7.5, y: 3}
+        - {x: -7.5, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7.5, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c179df027c4ebee4baf1ee29626714f9
+      internalID: 1126899346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_21"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 75
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7454c79872c0746befe926715c1f39
+      internalID: 926661330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_22"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 75
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed12df6e11c8a64b8c18099f4a00d4f
+      internalID: -2125718114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_23"
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 77
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea4524447b986c4da5cb7e534a52a3a
+      internalID: 1847991452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_24"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 77
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1857588daf9c0942af1603cc1cfc14f
+      internalID: -550412248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_25"
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 89
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 2}
+        - {x: -7, y: 2}
+        - {x: -7, y: -2}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d9dcb1d81619042a8100a2e59c78be
+      internalID: 1146444369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_26"
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 69
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19798af0e631b934da099026941d494a
+      internalID: -821640261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_27"
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188903cd5965e764a8374850e814f8ac
+      internalID: 1110834692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_28"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f267d6e6ca2a6e44298d0490abec2a01
+      internalID: 1958295271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_29"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 65
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7, y: 3}
+        - {x: -7, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a3fea70ad702b248b8343a5cde3afc2
+      internalID: 396701219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_30"
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 65
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7.5, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7.5, y: 3}
+        - {x: -7.5, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7.5, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5b060259cb65c44b2aec29874011cb
+      internalID: -767529775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_31"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 70
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 2}
+        - {x: -7, y: 2}
+        - {x: -7, y: -2}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f559b20c3007095459a73ff84af64a21
+      internalID: 1422569445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_32"
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 53
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1ba3c57c2299144b50925a387f60a6
+      internalID: -1015377949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_33"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 53
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3db8b6a03dd97647aa994794d624486
+      internalID: 839808013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_34"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 47
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7, y: 3}
+        - {x: -7, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11dc2ad4bc76b7547933ab6e497e7ec0
+      internalID: 1681848161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_35"
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 47
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7.5, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7.5, y: 3}
+        - {x: -7.5, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7.5, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a618f305cb7f923489511562e31d4b69
+      internalID: 1346174584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_36"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 52
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 2}
+        - {x: -7, y: 2}
+        - {x: -7, y: -2}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85420bfd2a4eea14ab76417de6224dc1
+      internalID: -1291661338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_37"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24244df9be03be43898c3b046679c4c
+      internalID: -424322019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_38"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e32f0dc1c8e6024d8fe8cf40d2255ef
+      internalID: 1951946608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_39"
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 35
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c084ecdc9ceb4a341a3ea5179beb6a81
+      internalID: -1773056247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_40"
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 35
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149467b26d73e4f479d08bcce97feb9e
+      internalID: 1705987638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_41"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 30
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7, y: 3}
+        - {x: -7, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f2764491ea6684fb2b3f6832ee0c00
+      internalID: 1436128767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_42"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 30
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7.5, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7.5, y: 3}
+        - {x: -7.5, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7.5, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a421efdb6f1c928419fa02fbdf5d2b90
+      internalID: -91597364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_43"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 33
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 2}
+        - {x: -7, y: 2}
+        - {x: -7, y: -2}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97bea1209a907e42a394ee493fd8778
+      internalID: -1579971180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_44"
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa955883a1482141aa05bbf04913dc8
+      internalID: -1045837322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_45"
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 12
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c0f6fa6824bda42a4fc2c838013255
+      internalID: -412974193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_46"
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 14
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13885b65cd377454dbfbd4e38462b350
+      internalID: -1516036840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_47"
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 14
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c26bf6b39af63428f2e288a9ab1e2b
+      internalID: 1072463570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_48"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 11
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7, y: 3}
+        - {x: -7, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8edabe728b3d3428930dbfbd989823
+      internalID: -1031014060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_49"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 10
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7.5, y: 5}
+        - {x: 1.5, y: 0}
+        - {x: 1.5, y: 7}
+        - {x: -2.5, y: 7}
+        - {x: -2.5, y: 1}
+        - {x: -5.5, y: 2}
+        - {x: -7.5, y: 3}
+        - {x: -7.5, y: -3}
+        - {x: -4.5, y: -7}
+        - {x: 3.5, y: -7}
+        - {x: 7.5, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d690626cd8a6a42b044fadb37522ba
+      internalID: 1125796188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_50"
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 15
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 7, y: 2}
+        - {x: -7, y: 2}
+        - {x: -7, y: -2}
+        - {x: 7, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3619c92e79138e94c837ed0fe8e48f96
+      internalID: 356024354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "T\u0130les (DETAYLI) (2)_0"
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 130
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c831056e34e974380bd9ee79ccc89f
+      internalID: -2077196589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3b286c5840b73cf45a086a2f517df4a7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "T\u0130les (DETAYLI) (2)_0": -2077196589
+      "T\u0130les (DETAYLI) (2)_1": 1510558050
+      "T\u0130les (DETAYLI) (2)_10": 823124586
+      "T\u0130les (DETAYLI) (2)_11": 1430089315
+      "T\u0130les (DETAYLI) (2)_12": -1776793536
+      "T\u0130les (DETAYLI) (2)_13": -1214596992
+      "T\u0130les (DETAYLI) (2)_14": -1819100191
+      "T\u0130les (DETAYLI) (2)_15": 341137765
+      "T\u0130les (DETAYLI) (2)_16": 952492101
+      "T\u0130les (DETAYLI) (2)_17": 1158901516
+      "T\u0130les (DETAYLI) (2)_18": 670966452
+      "T\u0130les (DETAYLI) (2)_19": 1857645229
+      "T\u0130les (DETAYLI) (2)_2": -1100004844
+      "T\u0130les (DETAYLI) (2)_20": 1126899346
+      "T\u0130les (DETAYLI) (2)_21": 926661330
+      "T\u0130les (DETAYLI) (2)_22": -2125718114
+      "T\u0130les (DETAYLI) (2)_23": 1847991452
+      "T\u0130les (DETAYLI) (2)_24": -550412248
+      "T\u0130les (DETAYLI) (2)_25": 1146444369
+      "T\u0130les (DETAYLI) (2)_26": -821640261
+      "T\u0130les (DETAYLI) (2)_27": 1110834692
+      "T\u0130les (DETAYLI) (2)_28": 1958295271
+      "T\u0130les (DETAYLI) (2)_29": 396701219
+      "T\u0130les (DETAYLI) (2)_3": 1527054131
+      "T\u0130les (DETAYLI) (2)_30": -767529775
+      "T\u0130les (DETAYLI) (2)_31": 1422569445
+      "T\u0130les (DETAYLI) (2)_32": -1015377949
+      "T\u0130les (DETAYLI) (2)_33": 839808013
+      "T\u0130les (DETAYLI) (2)_34": 1681848161
+      "T\u0130les (DETAYLI) (2)_35": 1346174584
+      "T\u0130les (DETAYLI) (2)_36": -1291661338
+      "T\u0130les (DETAYLI) (2)_37": -424322019
+      "T\u0130les (DETAYLI) (2)_38": 1951946608
+      "T\u0130les (DETAYLI) (2)_39": -1773056247
+      "T\u0130les (DETAYLI) (2)_4": 2060245691
+      "T\u0130les (DETAYLI) (2)_40": 1705987638
+      "T\u0130les (DETAYLI) (2)_41": 1436128767
+      "T\u0130les (DETAYLI) (2)_42": -91597364
+      "T\u0130les (DETAYLI) (2)_43": -1579971180
+      "T\u0130les (DETAYLI) (2)_44": -1045837322
+      "T\u0130les (DETAYLI) (2)_45": -412974193
+      "T\u0130les (DETAYLI) (2)_46": -1516036840
+      "T\u0130les (DETAYLI) (2)_47": 1072463570
+      "T\u0130les (DETAYLI) (2)_48": -1031014060
+      "T\u0130les (DETAYLI) (2)_49": 1125796188
+      "T\u0130les (DETAYLI) (2)_5": -1533240446
+      "T\u0130les (DETAYLI) (2)_50": 356024354
+      "T\u0130les (DETAYLI) (2)_6": 1526142783
+      "T\u0130les (DETAYLI) (2)_7": -1214340196
+      "T\u0130les (DETAYLI) (2)_8": -766498743
+      "T\u0130les (DETAYLI) (2)_9": 1151595741
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

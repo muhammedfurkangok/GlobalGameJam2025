@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IEnemy
 {
     public bool isPlayerPetrolArea;
     public bool isPlayerDetected;
@@ -20,6 +20,17 @@ public class Enemy : MonoBehaviour
     private Transform player;
     private float lastAttackTime;
     private bool facingRight = true;
+
+    public bool IsPlayerPetrolArea { get => isPlayerPetrolArea; set => isPlayerPetrolArea = value; }
+    public bool IsPlayerDetected { get => isPlayerDetected; set => isPlayerDetected = value; }
+    public bool ChangingPatrolPoint { get => changingPatrolPoint; set => changingPatrolPoint = value; }
+    public Transform[] PatrolPoints { get => patrolPoints; set => patrolPoints = value; }
+    public float PatrolSpeed { get => patrolSpeed; set => patrolSpeed = value; }
+    public float ChaseSpeed { get => chaseSpeed; set => chaseSpeed = value; }
+    public float AttackRange { get => attackRange; set => attackRange = value; }
+    public float AttackCooldown { get => attackCooldown; set => attackCooldown = value; }
+    public int Health { get => health; set => health = value; }
+    public CapsuleCollider2D CapsuleCollider { get => capsuleCollider; set => capsuleCollider = value; }
 
     private void Start()
     {
@@ -103,7 +114,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
         if (Time.time - lastAttackTime >= attackCooldown)
         {
@@ -113,7 +124,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         // Die logic here (e.g., play animation, destroy object)
         Debug.Log("Enemy died");

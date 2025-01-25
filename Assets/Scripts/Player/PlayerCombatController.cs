@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerCombatController : MonoBehaviour
@@ -11,7 +12,7 @@ public class PlayerCombatController : MonoBehaviour
 
     private bool isCharging = false;
     private float chargeStartTime;
-    public GameObject ChargingBubble { get; private set; } // Public property with private setter
+    public GameObject ChargingBubble { get; private set; }
 
     private void Update()
     {
@@ -33,9 +34,9 @@ public class PlayerCombatController : MonoBehaviour
         if (isCharging)
         {
             float chargeTime = Time.time - chargeStartTime;
-            float scale = Mathf.Clamp01(chargeTime); // scale'ı 0'dan 1'e kadar ayarla
+            float scale = Mathf.Clamp01(chargeTime);
             ChargingBubble.transform.localScale = new Vector3(scale, scale, scale);
-            ChargingBubble.transform.position = muzzle.position; // Update position to follow the muzzle
+            ChargingBubble.transform.position = muzzle.position;
         }
     }
 
@@ -53,17 +54,25 @@ public class PlayerCombatController : MonoBehaviour
         chargeStartTime = Time.time;
         ChargingBubble = Instantiate(ChargingBubblePrefab, muzzle.position, muzzle.rotation);
         ChargingBubble.transform.SetParent(muzzle.transform);
-        ChargingBubble.transform.localScale = Vector3.zero; // Başlangıçta scale 0
+        ChargingBubble.transform.localScale = Vector3.zero;
     }
 
     private void ShootCharged()
     {
-        ChargingBubble.transform.SetParent(null); // Parent'tan çıkar
+        if (ChargingBubble.transform.localScale.x < 0.5f)
+        {
+            ChargingBubble.transform.DOScale(0, 0.5f).OnComplete(() => { Destroy(ChargingBubble); });
+            ChargingBubble = null;
+            isCharging = false;
+            return;
+        }
+
+        ChargingBubble.transform.SetParent(null);
         isCharging = false;
         float chargeTime = Time.time - chargeStartTime;
         BubbleCapture bubbleCapture = ChargingBubble.GetComponent<BubbleCapture>();
         bubbleCapture.SetDirection(PlayerManager.Instance.playerController.GetFacingDirection());
         bubbleCapture.speed = captureBubbleSpeed + (chargeSpeedMultiplier * chargeTime);
-        ChargingBubble = null; // Referansı sıfırla
+        ChargingBubble = null;
     }
 }

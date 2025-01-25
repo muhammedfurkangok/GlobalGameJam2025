@@ -6434,7 +6434,7 @@ MonoBehaviour:
   GroundDeceleration: 60
   AirDeceleration: 30
   GroundingForce: -1.5
-  GrounderDistance: 0.023
+  GrounderDistance: 0.165
   JumpPower: 20
   MaxFallSpeed: 40
   FallAcceleration: 75
@@ -7347,6 +7347,10 @@ PrefabInstance:
     - target: {fileID: 8665635777815396497, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
       propertyPath: attackRange
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8665635777815396497, guid: db1e46eac57691441b847feabb9e38a6, type: 3}
+      propertyPath: isPlatformEnemy
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

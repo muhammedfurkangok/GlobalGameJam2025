@@ -5,6 +5,7 @@ public interface IEnemy
     bool IsPlayerPetrolArea { get; set; }
     bool IsPlayerDetected { get; set; }
     bool ChangingPatrolPoint { get; set; }
+    bool IsStunned { get; set; }
     Transform[] PatrolPoints { get; set; }
     float PatrolSpeed { get; set; }
     float ChaseSpeed { get; set; }
@@ -15,5 +16,5 @@ public interface IEnemy
 
     void TakeDamage(int damage);
     void Attack();
-    void Die();
+    void Stun();
 }

@@ -18,9 +18,10 @@ public class BubbleProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Zombie"))
+        if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<ZombieEnemy>().TakeDamage(10);
+            Debug.Log("Enemy hit");
+            other.GetComponent<IEnemy>().TakeDamage(25);
             Destroy(gameObject);
         }
     }

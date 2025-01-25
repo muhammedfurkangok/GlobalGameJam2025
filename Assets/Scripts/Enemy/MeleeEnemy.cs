@@ -2,7 +2,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class ZombieEnemy : MonoBehaviour, IEnemy
+public class MeleeEnemy : MonoBehaviour, IEnemy
 {
     public bool isPlayerPetrolArea;
     public bool isPlayerDetected;
@@ -38,6 +38,8 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
         get => changingPatrolPoint;
         set => changingPatrolPoint = value;
     }
+
+    public bool IsStunned { get; set; }
 
     public Transform[] PatrolPoints
     {
@@ -106,9 +108,10 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
 
     private void Update()
     {
+        
         if (health <= 0)
         {
-            Die();
+            Stun();
             return;
         }
 
@@ -189,18 +192,19 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
         {
             animator.SetTrigger("Attack");
 
-           
-
             Debug.Log("Attacking the player");
             lastAttackTime = Time.time;
         }
     }
 
-    public void Die()
+    public void Stun()
     {
-        animator.SetTrigger("Death");
+        IsStunned = true;
+         
+        
+        
+        
         Debug.Log("Enemy died");
-        Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
@@ -209,7 +213,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
         health -= damage;
         if (health <= 0)
         {
-            Die();
+            Stun();
         }
     }
 }

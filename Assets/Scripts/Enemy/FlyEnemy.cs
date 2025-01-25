@@ -41,6 +41,8 @@ public class FlyEnemy : MonoBehaviour, IEnemy
         set => changingPatrolPoint = value;
     }
 
+    public bool IsStunned { get; set; }
+
     public Transform[] PatrolPoints
     {
         get => patrolPoints;
@@ -116,7 +118,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
     {
         if (health <= 0)
         {
-            Die();
+            Stun();
             return;
         }
 
@@ -210,7 +212,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
         isCharging = false;
     }
 
-    public void Die()
+    public void Stun()
     {
         animator.SetTrigger("Death");
         Debug.Log("Enemy died");
@@ -223,7 +225,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
         health -= damage;
         if (health <= 0)
         {
-            Die();
+            Stun();
         }
     }
 }

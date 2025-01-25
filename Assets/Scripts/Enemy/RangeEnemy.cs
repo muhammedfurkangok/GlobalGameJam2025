@@ -39,6 +39,8 @@ public class RangeEnemy : MonoBehaviour, IEnemy
         set => changingPatrolPoint = value;
     }
 
+    public bool IsStunned { get; set; }
+
     public Transform[] PatrolPoints
     {
         get => patrolPoints;
@@ -104,7 +106,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
     {
         if (health <= 0)
         {
-            Die();
+            Stun();
             return;
         }
 
@@ -190,7 +192,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
         }
     }
 
-    public void Die()
+    public void Stun()
     {
         animator.SetTrigger("Death");
         Debug.Log("Enemy died");
@@ -203,7 +205,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
         health -= damage;
         if (health <= 0)
         {
-            Die();
+            Stun();
         }
     }
 }

@@ -4,14 +4,14 @@ using UnityEngine.Serialization;
 
 public class PlayerDetectionForZombieEnemy : MonoBehaviour
 {
-    public ZombieEnemy zombieEnemy;
+    [FormerlySerializedAs("zombieEnemy")] public MeleeEnemy meleeEnemy;
     private readonly string playerTag = "Player";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))
         {
-            zombieEnemy.isPlayerPetrolArea = true;
+            meleeEnemy.isPlayerPetrolArea = true;
         }
     }
 
@@ -19,7 +19,7 @@ public class PlayerDetectionForZombieEnemy : MonoBehaviour
     {
         if (other.CompareTag(playerTag))
         {
-            zombieEnemy.isPlayerPetrolArea = false;
+            meleeEnemy.isPlayerPetrolArea = false;
         }
     }
 }

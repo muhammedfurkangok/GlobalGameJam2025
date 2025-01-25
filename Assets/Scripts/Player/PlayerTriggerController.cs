@@ -35,11 +35,7 @@ public class PlayerTriggerController : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.CompareTag(meleeEnemyTag))
-        {
-            PlayerManager.Instance.playerHealthController.TakeDamage(10);
-        }
-        
+
         // if (other.CompareTag(flyChargeEnemy))
         // {
         //     PlayerManager.Instance.playerHealthController.TakeDamage(10);

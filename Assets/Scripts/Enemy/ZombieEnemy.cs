@@ -134,7 +134,22 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
         animator.SetBool("IsRunning", true);
         Vector2 targetPosition = player.position;
         FlipTowards(targetPosition);
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
+
+        float distanceToPlayer = Vector2.Distance(transform.position, targetPosition);
+        if (distanceToPlayer > attackRange)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, chaseSpeed * Time.deltaTime);
+        }
+    }
+    
+    private void CheckCollision()
+    {
+        Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, attackRange, LayerMask.GetMask("Player"));
+
+        if (playerCollider != null)
+        {
+            playerCollider.GetComponent<PlayerHealthController>().TakeDamage(10);
+        }
     }
 
     private async void Patrol()
@@ -174,12 +189,7 @@ public class ZombieEnemy : MonoBehaviour, IEnemy
         {
             animator.SetTrigger("Attack");
 
-            Collider2D playerCollider = Physics2D.OverlapCircle(transform.position, attackRange, LayerMask.GetMask("Player"));
-
-            if (playerCollider != null)
-            {
-                playerCollider.GetComponent<PlayerHealthController>().TakeDamage(10);
-            }
+           
 
             Debug.Log("Attacking the player");
             lastAttackTime = Time.time;

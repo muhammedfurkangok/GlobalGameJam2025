@@ -20,6 +20,7 @@ public class BubbleProjectile : MonoBehaviour
     {
         if (other.CompareTag("Zombie"))
         {
+            other.GetComponent<ZombieEnemy>().TakeDamage(10);
             Destroy(gameObject);
         }
     }

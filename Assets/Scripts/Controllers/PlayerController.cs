@@ -364,7 +364,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
                 _nextDashTime = _time + DashCooldown;
                 _dashBuffer = false;
                 _frameVelocity += Vector2.right * _dir * DashForce;
-                DashParticles.Play();
+                if(DashParticles != null)DashParticles.Play();
             }
         }
     }

@@ -55,7 +55,7 @@ public class CutSceneManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Level 1");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
@@ -63,7 +63,7 @@ public class CutSceneManager : MonoBehaviour
     {
         typewriterByCharacter.ShowText(cutSceneThing.text);
         cutSceneThing.image?.gameObject.SetActive(true);
-        if(audioSource.isPlaying) audioSource.Stop();
+        if (audioSource.isPlaying) audioSource.Stop();
         audioSource.PlayOneShot(cutSceneThing.sound);
     }
 }

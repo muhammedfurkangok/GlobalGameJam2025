@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 427483413}
   - component: {fileID: 427483415}
   - component: {fileID: 427483414}
-  - component: {fileID: 427483416}
   m_Layer: 5
   m_Name: Photo1
   m_TagString: Untagged
@@ -177,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -739028852, guid: 4355706b886d64f4cbb96db2d7ac0345, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b79993521b9b86e4ba9a7f67386860c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -195,28 +194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427483412}
   m_CullTransparentMesh: 1
---- !u!95 &427483416
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427483412}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fcbc4de12bc58e748a2be1add6591b83, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &597763290
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,8 +727,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneThings:
-  - text: "Timmy was playing with his favorite toys; Johnny\_and\_Void"
-    image: {fileID: 0}
+  - text: "Then Johnny went into the cave to face his former friend\_Void..."
+    image: {fileID: 427483414}
     canvasGroup: {fileID: 0}
     sound: {fileID: 8300000, guid: 2ae8687f56b54584386dfc20ee339444, type: 3}
   typewriterByCharacter: {fileID: 823331237}

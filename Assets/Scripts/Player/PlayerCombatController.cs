@@ -36,7 +36,7 @@ public class PlayerCombatController : MonoBehaviour
         {
             float chargeTime = Time.time - chargeStartTime;
             float scale = Mathf.Clamp01(chargeTime);
-            ChargingBubble.transform.localScale = new Vector3(scale, scale, scale);
+            ChargingBubble.transform.localScale = new Vector3(scale * 2, scale * 2, scale * 2);
             ChargingBubble.transform.position = muzzle.position;
 
             // Set charging animation

@@ -54,6 +54,8 @@ public class BubbleCapture : MonoBehaviour
             {
                 enemy.TakeDamage(10);
             }
+            
+            SoundManager.Instance.PlayOneShotSound(SoundType.BubbleCapture);
         }
     }
 }

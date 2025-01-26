@@ -197,6 +197,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
         if (Time.time - lastAttackTime >= attackCooldown)
         {
             animator.SetTrigger("Attack");
+            SoundManager.Instance.PlayOneShotSound(SoundType.MeleeCharacterAttack);
             lastAttackTime = Time.time;
         }
     }
@@ -212,6 +213,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     {
         if (IsStunned) return;
 
+        SoundManager.Instance.PlayOneShotSound(SoundType.MeleeCharacterHit);
         animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)

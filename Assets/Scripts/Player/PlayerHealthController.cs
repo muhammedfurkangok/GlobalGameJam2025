@@ -14,6 +14,7 @@ public class PlayerHealthController : MonoBehaviour
         if (!canTakeDamage) return;
 
         canTakeDamage = false;
+        SoundManager.Instance.PlayOneShotSound(SoundType.CharcterGetHit);
         PlayerManager.Instance.animator.SetTrigger("Hit");
         health -= damage;
         PlayerManager.Instance.playerUIController.UpdateImageFill();

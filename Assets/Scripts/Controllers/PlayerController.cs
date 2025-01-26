@@ -379,6 +379,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
                 // Dash animation trigger
                 PlayerManager.Instance.animator.SetTrigger("Dash");
+                SoundManager.Instance.PlayOneShotSound(SoundType.CharacterDash);
             }
         }
     }

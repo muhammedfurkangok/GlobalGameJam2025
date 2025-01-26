@@ -21,6 +21,8 @@ public class RangeEnemy : MonoBehaviour, IEnemy
     private float lastAttackTime;
     private bool facingRight = true;
 
+    
+    
     public bool IsPlayerPetrolArea
     {
         get => isPlayerPetrolArea;
@@ -172,6 +174,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
         if (Time.time - lastAttackTime >= attackCooldown)
         {
             animator.SetBool("IsRunning", false);
+            SoundManager.Instance.PlayOneShotSound(SoundType.RangeCharacterAttack);
             animator.SetTrigger("Attack");
             LaunchProjectile();
             lastAttackTime = Time.time;
@@ -201,6 +204,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
     {
         if (IsStunned) return;
 
+        SoundManager.Instance.PlayOneShotSound(SoundType.RangeCharacterHit);
         animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)

@@ -22,6 +22,7 @@ public class JumpBoosterCreate : MonoBehaviour, IEnemy
     public float AttackCooldown { get; set; }
     public int Health { get; set; }
     public CapsuleCollider2D CapsuleCollider { get; set; }
+    public BoxCollider2D enemyCollider { get; set; }
 
     private void Start()
     {

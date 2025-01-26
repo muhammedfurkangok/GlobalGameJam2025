@@ -15,6 +15,7 @@ public interface IEnemy
     float AttackCooldown { get; set; }
     int Health { get; set; }
     CapsuleCollider2D CapsuleCollider { get; set; }
+    BoxCollider2D enemyCollider { get; set; }
 
     void TakeDamage(int damage);
     void Attack();

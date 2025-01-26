@@ -81,6 +81,8 @@ public class RangeEnemy : MonoBehaviour, IEnemy
         set => capsuleCollider = value;
     }
 
+    public BoxCollider2D enemyCollider { get; set; }
+
     private void Start()
     {
         animator = GetComponent<Animator>();

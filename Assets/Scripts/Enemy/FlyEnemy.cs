@@ -16,6 +16,7 @@ public class FlyEnemy : MonoBehaviour, IEnemy
     public int health = 100;
     public CapsuleCollider2D capsuleCollider;
 
+    private bool isDead;
     private Animator animator;
     private int currentPatrolIndex;
     private Transform player;
@@ -92,6 +93,8 @@ public class FlyEnemy : MonoBehaviour, IEnemy
         get => capsuleCollider;
         set => capsuleCollider = value;
     }
+
+    public BoxCollider2D enemyCollider { get; set; }
 
     private void Start()
     {
@@ -216,7 +219,9 @@ public class FlyEnemy : MonoBehaviour, IEnemy
 
     public void Stun()
     {
-        animator.SetTrigger("Death");
+        if (isDead) return;
+        
+        isDead = true;
         Debug.Log("Enemy died");
         Destroy(gameObject);
     }

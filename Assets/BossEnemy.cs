@@ -184,7 +184,7 @@ public class BossEnemy : MonoBehaviour, IEnemy
         if (IsStunned) return;
 
         health -= damage;
-        float newFillAmount = (float)health / 500;
+        float newFillAmount = (float)health / 1250;
 
         bossHealthBarFill.DOFillAmount(newFillAmount, 0.5f).SetEase(Ease.OutQuad);
 

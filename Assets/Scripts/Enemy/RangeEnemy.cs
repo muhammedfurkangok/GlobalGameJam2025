@@ -108,11 +108,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
 
     private void Update()
     {
-        if (health <= 0)
-        {
-            Stun();
-            return;
-        }
+        if (IsStunned) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -146,8 +142,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
         animator.SetBool("IsRunning", true);
         Transform targetPoint = patrolPoints[currentPatrolIndex];
         FlipTowards(targetPoint.position);
-        transform.position =
-            Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPoint.position, patrolSpeed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f && !isPlayerDetected &&
             !isPlayerPetrolArea && !changingPatrolPoint)
@@ -189,8 +184,7 @@ public class RangeEnemy : MonoBehaviour, IEnemy
         {
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Vector2 direction = (player.position - firePoint.position).normalized;
-            projectile.GetComponent<Rigidbody2D>().linearVelocity =
-                direction * 10f;
+            projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * 10f;
 
             Debug.Log("Projectile launched towards the player");
         }
@@ -199,10 +193,14 @@ public class RangeEnemy : MonoBehaviour, IEnemy
     public void Stun()
     {
         IsStunned = true;
+        animator.SetBool("IsRunning", false);
+        animator.SetTrigger("Die");
     }
 
     public void TakeDamage(int damage)
     {
+        if (IsStunned) return;
+
         animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)

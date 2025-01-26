@@ -204,10 +204,14 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     public void Stun()
     {
         IsStunned = true;
+        animator.SetBool("IsRunning", false);
+        animator.SetTrigger("Die");
     }
 
     public void TakeDamage(int damage)
     {
+        if (IsStunned) return;
+
         animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)

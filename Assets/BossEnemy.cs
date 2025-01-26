@@ -27,12 +27,13 @@ public class BossEnemy : MonoBehaviour, IEnemy
     public Vector3 attackOffset;
 
     public CinemachineImpulseSource impulseSource;
+    public SceneController sceneController;
 
     public Image bossHealthBarBackground;
     public Image bossHealthBarFill;
 
     public CinemachineCamera initCamera;
-
+    public bool startSequence = true;
 
     public float ChaseSpeed
     {
@@ -76,7 +77,19 @@ public class BossEnemy : MonoBehaviour, IEnemy
     private void HealthBarInitializeAnimation()
     {
         bossHealthBarBackground.transform.DOScale(new Vector3(1, 1, 1), 0.5f).SetEase(Ease.OutBack)
-            .OnComplete(() => { bossHealthBarFill.DOFillAmount(1, 1f).OnComplete(() => { StartGame(); }); });
+            .OnComplete(() =>
+            {
+                bossHealthBarFill.DOFillAmount(1, 4f).OnComplete(() =>
+                {
+                    startSequence = false;
+                    StartGame();
+                });
+            });
+    }
+
+    private void HealhBarCloseAnimation()
+    {
+        bossHealthBarBackground.transform.DOScale(new Vector3(0, 1, 1), 0.5f).SetEase(Ease.InBack);
     }
 
     private void StartGame()
@@ -87,6 +100,8 @@ public class BossEnemy : MonoBehaviour, IEnemy
 
     private void Update()
     {
+        if (startSequence) return;
+
         if (IsStunned) return;
 
         ChaseAndAttackPlayer();
@@ -160,6 +175,8 @@ public class BossEnemy : MonoBehaviour, IEnemy
         IsStunned = true;
         animator.SetBool("IsRunning", false);
         animator.SetTrigger("Die");
+        HealhBarCloseAnimation();
+        sceneController.SceneEnd();
     }
 
     public void TakeDamage(int damage)
@@ -167,7 +184,12 @@ public class BossEnemy : MonoBehaviour, IEnemy
         if (IsStunned) return;
 
         health -= damage;
-        bossHealthBarFill.fillAmount = (float)health / 500;
+        float newFillAmount = (float)health / 500;
+
+        bossHealthBarFill.DOFillAmount(newFillAmount, 0.5f).SetEase(Ease.OutQuad);
+
+        bossHealthBarBackground.transform.DOShakePosition(0.5f, new Vector3(10, 0, 0), 10, 90, false, true);
+
         if (health <= 0)
         {
             Stun();

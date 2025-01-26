@@ -213,7 +213,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     {
         if (IsStunned) return;
 
-        SoundManager.Instance.PlayOneShotSound(SoundType.MeleeCharacterHit);
+        SoundManager.Instance.PlayOneShotSound(SoundType.MeleeCharacterHit, 0.1f);
         animator.SetTrigger("Hit");
         health -= damage;
         if (health <= 0)

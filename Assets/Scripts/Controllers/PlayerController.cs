@@ -290,6 +290,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void ExecuteJump()
     {
+        SoundManager.Instance.PlayOneShotSound(SoundType.CharacterJump);
         _endedJumpEarly = false;
         _timeJumpWasPressed = 0;
         _bufferedJumpUsable = false;
@@ -302,6 +303,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void ExecuteAirJump()
     {
+        SoundManager.Instance.PlayOneShotSound(SoundType.CharacterJump);
         _endedJumpEarly = false;
         _timeJumpWasPressed = 0;
         _bufferedJumpUsable = false;

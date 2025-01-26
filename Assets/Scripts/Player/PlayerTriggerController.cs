@@ -16,6 +16,7 @@ public class PlayerTriggerController : MonoBehaviour
     {
         if (other.CompareTag(platform))
         {
+            SoundManager.Instance.PlayOneShotSound(SoundType.BubblePop, 0.5f);
             var forceDirection = Vector2.up;
             PlayerManager.Instance.playerRigidbody2D.AddForce(forceDirection * jumpForce, ForceMode2D.Force);
 

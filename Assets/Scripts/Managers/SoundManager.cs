@@ -9,11 +9,13 @@ public enum SoundType
     CharcterGetHit,
     CharacterCharge,
     CharacterDash,
+    CharacterJump,
     RangeCharacterAttack,
     RangeCharacterHit,
     MeleeCharacterAttack,
     MeleeCharacterHit,
     BubbleCapture,
+    BubblePop,
 }
 
 [Serializable]

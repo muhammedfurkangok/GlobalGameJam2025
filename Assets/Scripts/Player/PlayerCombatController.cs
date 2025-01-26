@@ -46,6 +46,9 @@ public class PlayerCombatController : MonoBehaviour
 
     private async void Shoot()
     {
+        SoundManager.Instance.PlayOneShotSound(SoundType.CharacterAttack);
+
+
         PlayerManager.Instance.animator.SetTrigger("Shoot");
         await UniTask.WaitForSeconds(0.3f);
         SoundManager.Instance.PlayOneShotSound(SoundType.CharacterAttack);
@@ -65,6 +68,7 @@ public class PlayerCombatController : MonoBehaviour
         ChargingBubble.transform.localScale = Vector3.zero;
 
         PlayerManager.Instance.animator.SetBool("IsChargingBubble", true);
+        SoundManager.Instance.PlayOneShotSound(SoundType.BubbleCapture);
     }
 
     private void ShootCharged()
@@ -76,7 +80,6 @@ public class PlayerCombatController : MonoBehaviour
             isCharging = false;
 
             PlayerManager.Instance.animator.SetBool("IsChargingBubble", false);
-            SoundManager.Instance.PlayOneShotSound(SoundType.CharacterAttack);
             return;
         }
 

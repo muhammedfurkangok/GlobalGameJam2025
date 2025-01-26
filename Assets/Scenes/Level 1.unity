@@ -47634,6 +47634,7 @@ GameObject:
   - component: {fileID: 2074616927}
   - component: {fileID: 2074616926}
   - component: {fileID: 2074616925}
+  - component: {fileID: 2074616930}
   m_Layer: 7
   m_Name: SPIKES_MAP
   m_TagString: Untagged
@@ -47713,7 +47714,7 @@ CompositeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -48696,6 +48697,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2074616930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074616923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e72b26f4981774d97dd062766310e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneController: {fileID: 1514539702}
 --- !u!1 &2102833855
 GameObject:
   m_ObjectHideFlags: 0

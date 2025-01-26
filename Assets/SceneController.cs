@@ -13,6 +13,19 @@ public class SceneController : MonoBehaviour
         SceneStart();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneRestart();
+        }
+        
+        if( Input.GetKeyDown(KeyCode.N))
+        {
+            SceneEnd();
+        }
+    }
+
     public void SceneStart()
     {
         ImageCanvasGroup.DOFade(0, 1f).OnComplete(() =>

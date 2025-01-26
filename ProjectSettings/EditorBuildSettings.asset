@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2 olacak.unity
     guid: ba5cf040762285b499c52ae4a346c856
   - enabled: 1
+    path: Assets/Scenes/CutSceneBeforeBoss.unity
+    guid: ec73bffa25880ed4e9bed65aabf4f860
+  - enabled: 1
     path: Assets/Scenes/Level 3 olacak.unity
     guid: d4194a5e3c2a83a49b5047f6396f8f6a
+  - enabled: 1
+    path: Assets/Scenes/CutSceneAfterBoss.unity
+    guid: 9dc7272bacd038a47bb39da954ae3d74
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fd6c9d067024a964a8b9d28800280151, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: a7af6ed562db02b439584cb1cc805654, type: 3}

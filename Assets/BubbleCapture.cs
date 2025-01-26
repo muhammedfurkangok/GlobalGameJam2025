@@ -14,6 +14,7 @@ public class BubbleCapture : MonoBehaviour
     public void SetDirection(Vector2 newDirection)
     {
         direction = newDirection.normalized;
+        normalCollider.enabled = true;
     }
 
     private void Update()
@@ -35,6 +36,11 @@ public class BubbleCapture : MonoBehaviour
 
             if (enemy.IsStunned && !enemy.IsPlatformEnemy)
             {
+                if (other.transform.parent != null)
+                {
+                    Destroy(other.transform.parent.gameObject);
+                }
+
                 other.transform.SetParent(this.transform);
                 other.transform.DOLocalMove(Vector3.zero, 0.2f).SetEase(Ease.OutBounce);
                 transform.DOLocalMoveY(transform.localPosition.y + 10f, 5f).SetEase(Ease.OutBounce);
@@ -54,7 +60,7 @@ public class BubbleCapture : MonoBehaviour
             {
                 enemy.TakeDamage(10);
             }
-            
+
             SoundManager.Instance.PlayOneShotSound(SoundType.BubbleCapture);
         }
     }

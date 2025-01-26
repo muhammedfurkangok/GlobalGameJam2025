@@ -117,11 +117,7 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
 
     private void Update()
     {
-        if (health <= 0)
-        {
-            Stun();
-            return;
-        }
+        if (IsStunned) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -201,7 +197,6 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
         if (Time.time - lastAttackTime >= attackCooldown)
         {
             animator.SetTrigger("Attack");
-            Debug.Log("Attacking the player");
             lastAttackTime = Time.time;
         }
     }
@@ -209,8 +204,6 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     public void Stun()
     {
         IsStunned = true;
-
-        Debug.Log("Enemy died");
     }
 
     public void TakeDamage(int damage)

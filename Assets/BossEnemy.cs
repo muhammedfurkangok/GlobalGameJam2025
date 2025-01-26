@@ -1,6 +1,8 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossEnemy : MonoBehaviour, IEnemy
 {
@@ -25,8 +27,11 @@ public class BossEnemy : MonoBehaviour, IEnemy
     public Vector3 attackOffset;
 
     public CinemachineImpulseSource impulseSource;
-    
-    
+
+    public Image bossHealthBarBackground;
+    public Image bossHealthBarFill;
+
+    public CinemachineCamera initCamera;
 
 
     public float ChaseSpeed
@@ -63,17 +68,26 @@ public class BossEnemy : MonoBehaviour, IEnemy
 
     private void Start()
     {
+        HealthBarInitializeAnimation();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    private void HealthBarInitializeAnimation()
+    {
+        bossHealthBarBackground.transform.DOScale(new Vector3(1, 1, 1), 0.5f).SetEase(Ease.OutBack)
+            .OnComplete(() => { bossHealthBarFill.DOFillAmount(1, 1f).OnComplete(() => { StartGame(); }); });
+    }
+
+    private void StartGame()
+    {
+        initCamera.gameObject.SetActive(false);
+        Debug.Log("Game Started");
+    }
+
     private void Update()
     {
-        if (health <= 0)
-        {
-            Stun();
-            return;
-        }
+        if (IsStunned) return;
 
         ChaseAndAttackPlayer();
     }
@@ -142,18 +156,25 @@ public class BossEnemy : MonoBehaviour, IEnemy
     public void Stun()
     {
         if (IsStunned) return;
-        
+
         IsStunned = true;
+        animator.SetBool("IsRunning", false);
         animator.SetTrigger("Die");
     }
 
     public void TakeDamage(int damage)
     {
-        animator.SetTrigger("Hit");
+        if (IsStunned) return;
+
         health -= damage;
+        bossHealthBarFill.fillAmount = (float)health / 500;
         if (health <= 0)
         {
             Stun();
+        }
+        else
+        {
+            animator.SetTrigger("Hit");
         }
     }
 

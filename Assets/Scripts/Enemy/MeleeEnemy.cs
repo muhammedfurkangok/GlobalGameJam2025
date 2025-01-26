@@ -205,6 +205,14 @@ public class MeleeEnemy : MonoBehaviour, IEnemy
     public void Stun()
     {
         IsStunned = true;
+
+        if (transform.parent != null)
+        {
+            var oldParent = transform.parent.gameObject;
+            transform.SetParent(null);
+            Destroy(oldParent);
+        }
+
         animator.SetBool("IsRunning", false);
         animator.SetTrigger("Die");
     }

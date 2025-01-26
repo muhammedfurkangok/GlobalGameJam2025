@@ -1377,6 +1377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 7190415568159296467, guid: 47f7aa374b3bddb4d8b43903ffd6864d, type: 3}
+      propertyPath: m_Volume
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 8629345855731806679, guid: 47f7aa374b3bddb4d8b43903ffd6864d, type: 3}
       propertyPath: m_IsActive
       value: 0

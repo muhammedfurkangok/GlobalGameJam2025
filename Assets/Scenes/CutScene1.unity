@@ -1235,22 +1235,22 @@ MonoBehaviour:
   - text: "His Mother was giving Timmy a\_bath."
     image: {fileID: 427483414}
     canvasGroup: {fileID: 1577380108}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: 3f7a6174da0692944a2ccf7b9cc18705, type: 3}
   - text: "Timmy was playing with his favorite toys; Johnny\_and\_Void"
     image: {fileID: 685199553}
     canvasGroup: {fileID: 726817807}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: 2ae8687f56b54584386dfc20ee339444, type: 3}
   - text: "Johnny and Void were fighting as usual, but in the middle of their fight,
       \\n something unexpected happened: \\nVoid fell out of Timmy's hand and disappeared
       into the depths\_of\_the\_bath..."
     image: {fileID: 1394774379}
     canvasGroup: {fileID: 1097880757}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: 9a106a2af881cbb48880cc45a7269003, type: 3}
   - text: As much as Johnny and the void were enemies, \n Johnny didn't want to leave
       the void in the depths of the bathtub.
     image: {fileID: 1395699334}
     canvasGroup: {fileID: 1782260446}
-    sound: {fileID: 0}
+    sound: {fileID: 8300000, guid: e48ff00be6b9c1d4f8a40a2d18283bc1, type: 3}
   typewriterByCharacter: {fileID: 823331237}
   audioSource: {fileID: 1132856421}
 --- !u!4 &1605894899

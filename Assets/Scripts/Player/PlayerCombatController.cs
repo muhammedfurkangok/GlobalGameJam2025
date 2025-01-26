@@ -48,6 +48,7 @@ public class PlayerCombatController : MonoBehaviour
     {
         PlayerManager.Instance.animator.SetTrigger("Shoot");
         await UniTask.WaitForSeconds(0.3f);
+        SoundManager.Instance.PlayOneShotSound(SoundType.CharacterAttack);
 
         GameObject projectile = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
         BubbleProjectile projectileScript = projectile.GetComponent<BubbleProjectile>();
@@ -75,6 +76,7 @@ public class PlayerCombatController : MonoBehaviour
             isCharging = false;
 
             PlayerManager.Instance.animator.SetBool("IsChargingBubble", false);
+            SoundManager.Instance.PlayOneShotSound(SoundType.CharacterAttack);
             return;
         }
 

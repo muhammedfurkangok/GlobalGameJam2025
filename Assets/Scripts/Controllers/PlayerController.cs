@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     public PlayerControlScheme controlScheme = PlayerControlScheme.WASD;
     [SerializeField] private ParticleSystem DashParticles;
+    [SerializeField] private Animator animator;
 
     #region Interface
 
@@ -141,7 +142,7 @@ public class PlayerController : MonoBehaviour, IPlayerController
                 JumpDown = Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W),
                 JumpHeld = Input.GetButton("Jump") || Input.GetKey(KeyCode.W),
                 DropHeld = Input.GetKey(KeyCode.S),
-                DashDown = Input.GetKeyDown(KeyCode.Y),
+                DashDown = Input.GetKeyDown(KeyCode.LeftShift),
                 ShootHeld = Input.GetKey(KeyCode.T),
                 Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
             };
@@ -295,6 +296,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _coyoteUsable = false;
         _frameVelocity.y = JumpPower;
         Jumped?.Invoke(false);
+
+        PlayerManager.Instance.animator.SetTrigger("Jump");
     }
 
     private void ExecuteAirJump()
@@ -306,6 +309,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
         _frameVelocity.y = JumpPower;
         _airJumps -= 1;
         Jumped?.Invoke(true);
+
+        PlayerManager.Instance.animator.SetTrigger("Jump");
     }
 
     #endregion
@@ -317,15 +322,21 @@ public class PlayerController : MonoBehaviour, IPlayerController
         Func<bool> isMax = () =>
             Mathf.Abs(_frameVelocity.x) > MaxSpeed && Mathf.Sign(_frameInput.Move.x) == Mathf.Sign(_frameVelocity.x);
 
-        if (_frameInput.Move.x == 0 || isMax())
+        if (_frameInput.Move.x == 0)
         {
             var deceleration = _grounded ? GroundDeceleration : AirDeceleration;
             _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, 0, deceleration * Time.fixedDeltaTime);
+
+            // Stop running animation
+            PlayerManager.Instance.animator.SetBool("IsRunning", false);
         }
         else
         {
             _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * MaxSpeed,
                 Acceleration * Time.fixedDeltaTime);
+
+            // Start running animation
+            PlayerManager.Instance.animator.SetBool("IsRunning", true);
         }
 
         FlipCharacter();
@@ -364,7 +375,10 @@ public class PlayerController : MonoBehaviour, IPlayerController
                 _nextDashTime = _time + DashCooldown;
                 _dashBuffer = false;
                 _frameVelocity += Vector2.right * _dir * DashForce;
-                if(DashParticles != null)DashParticles.Play();
+                if (DashParticles != null) DashParticles.Play();
+
+                // Dash animation trigger
+                PlayerManager.Instance.animator.SetTrigger("Dash");
             }
         }
     }

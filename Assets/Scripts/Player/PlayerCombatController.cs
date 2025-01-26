@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -37,11 +38,17 @@ public class PlayerCombatController : MonoBehaviour
             float scale = Mathf.Clamp01(chargeTime);
             ChargingBubble.transform.localScale = new Vector3(scale, scale, scale);
             ChargingBubble.transform.position = muzzle.position;
+
+            // Set charging animation
+            PlayerManager.Instance.animator.SetBool("IsChargingBubble", true);
         }
     }
 
-    private void Shoot()
+    private async void Shoot()
     {
+        PlayerManager.Instance.animator.SetTrigger("Shoot");
+        await UniTask.WaitForSeconds(0.3f);
+
         GameObject projectile = Instantiate(projectilePrefab, muzzle.position, muzzle.rotation);
         BubbleProjectile projectileScript = projectile.GetComponent<BubbleProjectile>();
         projectileScript.SetDirection(PlayerManager.Instance.playerController.GetFacingDirection());
@@ -55,6 +62,8 @@ public class PlayerCombatController : MonoBehaviour
         ChargingBubble = Instantiate(ChargingBubblePrefab, muzzle.position, muzzle.rotation);
         ChargingBubble.transform.SetParent(muzzle.transform);
         ChargingBubble.transform.localScale = Vector3.zero;
+
+        PlayerManager.Instance.animator.SetBool("IsChargingBubble", true);
     }
 
     private void ShootCharged()
@@ -64,6 +73,8 @@ public class PlayerCombatController : MonoBehaviour
             ChargingBubble.transform.DOScale(0, 0.5f).OnComplete(() => { Destroy(ChargingBubble); });
             ChargingBubble = null;
             isCharging = false;
+
+            PlayerManager.Instance.animator.SetBool("IsChargingBubble", false);
             return;
         }
 
@@ -74,5 +85,7 @@ public class PlayerCombatController : MonoBehaviour
         bubbleCapture.SetDirection(PlayerManager.Instance.playerController.GetFacingDirection());
         bubbleCapture.speed = captureBubbleSpeed + (chargeSpeedMultiplier * chargeTime);
         ChargingBubble = null;
+
+        PlayerManager.Instance.animator.SetBool("IsChargingBubble", false);
     }
 }

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Runtime.Extensions;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class PlayerHealthController : MonoBehaviour
 {
     public int health = 100;
     public bool canTakeDamage = true;
+    public GameObject bubbleRescue;
 
     public async void TakeDamage(int damage)
     {
@@ -26,6 +28,17 @@ public class PlayerHealthController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        bubbleRescue.SetActive(true);
+        bubbleRescue.transform.DOScale(2, 1f).OnComplete(() =>
+        {
+            transform.DOLocalMoveY(10, 10f).OnComplete(() =>
+            {
+               
+            });
+            DOVirtual.DelayedCall( 1.5f, () =>
+            {
+                PlayerManager.Instance.sceneController.SceneRestart();
+            });
+        });
     }
 }

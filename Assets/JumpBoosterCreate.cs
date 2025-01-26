@@ -31,16 +31,17 @@ public class JumpBoosterCreate : MonoBehaviour, IEnemy
 
     public void TakeDamage(int damage)
     {
-        throw new System.NotImplementedException();
+        // throw new System.NotImplementedException();
+        return;
     }
 
     public void Attack()
     {
-        throw new System.NotImplementedException();
+        return;
     }
 
     public void Stun()
     {
-        throw new System.NotImplementedException();
+        return;
     }
 }

@@ -36,6 +36,23 @@ public class SceneController : MonoBehaviour
         transitionBubbleAnimator.SetTrigger("End");
     }
 
+    public void SceneRestart()
+    {
+        ImageCanvasGroup.DOFade(1, 2f).OnComplete(() =>
+        {
+            ImageCanvasGroup.blocksRaycasts = true;
+            ImageCanvasGroup.interactable = true;
+            RestartCurrentScene();
+        });
+        SoundManager.Instance.PlayOneShotSound(SoundType.BubbleTransition);
+        transitionBubbleAnimator.SetTrigger("End");
+    }
+
+    private void RestartCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     public void LoadNextScene()
     {

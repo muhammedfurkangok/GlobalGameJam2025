@@ -361,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10576afc571715e4c8c3130a138f60df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  healthBarRectTransform: {fileID: 0}
+  healthBar: {fileID: 937947736907044727}
+  healthBarRectTransform: {fileID: 977574956387388483}
 --- !u!114 &4145581978269445076
 MonoBehaviour:
   m_ObjectHideFlags: 0
